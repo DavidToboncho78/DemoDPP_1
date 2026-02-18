@@ -19,14 +19,19 @@ st.link_button("Visit Huawei Digital Power", "https://solar.huawei.com/de/produc
 if st.button("Click Me"):
     st.write('Button was clicked!')
 
-# 5. Sliders to edit values 
-st.divider() # Adds a nice visual line
+# Sliders to edit values
+st.header("Live Battery Telemetry")
 
-myVoltage = st.slider("BESS Voltage", min_value=10, max_value=800, value=250, step=10)
-st.write(f"Current Voltage: {myVoltage}V")
+col1, col2, col3 = st.columns(3)
 
-mySoC = st.slider("BESS State of Charge (SoC)", min_value=0, max_value=100, value=50, step=1)
-st.write(f"SoC: {mySoC}%")
+with col1:
+    myVoltage = st.slider("BESS Voltage", 10, 800, 250)
+    st.metric("Voltage", f"{myVoltage} V")
 
-mySoH = st.slider("BESS State of Health (SoH)", min_value=0, max_value=100, value=95, step=1)
-st.write(f"SoH: {mySoH}%")
+with col2:
+    mySoC = st.slider("State of Charge", 0, 100, 80)
+    st.metric("SoC", f"{mySoC} %")
+
+with col3:
+    mySoH = st.slider("State of Health", 0, 100, 98)
+    st.metric("SoH", f"{mySoH} %")
