@@ -1,30 +1,20 @@
 import streamlit as st
 
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="Battery DPP Demo", layout="wide")
 
-st.title("Better Together - DPP4.0 - Live Dynamic Battery DPP Demo")
-st.subheader("A demo with Catena-X, OPCF, IDTA, ECLASS, Eclipse, ZVEI, VDMA")
-st.write("I am passionate about battery DPP")
+st.title("Better Together - DPP4.0")
+st.subheader("Live Dynamic Battery DPP Demo")
 
-# Side bar
-st.sidebar.title("Sidebar")
-st.sidebar.markdown("This is a Streamlit sidebar... placeholders")
+st.sidebar.title("Navigation")
+st.sidebar.info("DPP Demo 2026")
 
 # Links
 st.link_button("Visit Complete Static DPP", "https://eds.worldeds.com/dpp/index.html#/dppDetailLocal?sn&passportId=EU240186EX2380002323&model=&partNum=01076608")
 st.link_button("Visit Huawei Digital Power", "https://solar.huawei.com/de/products/luna2000-7-14-21-s1/")
 
-# Interactivity
-if st.button("Click Me"):
-    st.write('Clicked')
-
 # Sliders
-st.divider()
-myVoltage = st.slider("BESS Voltage", 10, 800, 250, 10)
-st.write(f"Voltage: {myVoltage}V")
+v = st.slider("BESS Voltage", 10, 800, 250)
+soc = st.slider("State of Charge (%)", 0, 100, 50)
+soh = st.slider("State of Health (%)", 0, 100, 95)
 
-mySoC = st.slider("BESS State of Charge", 0, 100, 50, 1)
-st.write(f"SoC: {mySoC}%")
-
-mySoH = st.slider("BESS State of Health", 0, 100, 95, 1)
-st.write(f"SoH: {mySoH}%")
+st.write(f"Telemetry: {v}V | SoC: {soc}% | SoH: {soh}%")
