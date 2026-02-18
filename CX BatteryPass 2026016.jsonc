@@ -1,0 +1,221 @@
+{
+  "idShort": "BatteryProductPassport",
+  "administration": {
+    "version": "1",
+    "revision": "0"
+  },
+  "description": [
+    {
+      "language": "en",
+      "text": "Full Battery Product Passport compliant with EU Battery Regulation (~90 attributes in full implementation)."
+    }
+  ],
+  "kind": "Instance",
+  "semanticId": {
+    "type": "ModelReference",
+    "keys": [
+      {
+        "type": "ConceptDescription",
+        "value": "https://admin-shell.io/idta/BatteryPass/1/0"
+      }
+    ]
+  },
+  "submodelElements": [
+    {
+      "idShort": "GeneralInformation",
+      "category": "PARAMETER",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "BatteryID",
+          "value": "123e4567-e89b-12d3-a456-426614174000",
+          "valueType": "xs:string",
+          "modelType": "Property",
+          "description": [{ "language": "en", "text": "Unique identifier of the battery" }]
+        },
+        {
+          "idShort": "Manufacturer",
+          "value": "Battery Mfg Co.",
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ManufacturingPlace",
+          "value": "Gigafactory 1, Berlin",
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ManufacturingDate",
+          "value": "2023-10-15",
+          "valueType": "xs:date",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "BatteryCategory",
+          "value": "EV",
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "Weight",
+          "value": "450",
+          "valueType": "xs:double",
+          "modelType": "Property",
+          "semanticId": { "keys": [{ "type": "ConceptDescription", "value": "0173-1#02-AAI500#005" }] }
+        }
+      ]
+    },
+    {
+      "idShort": "PerformanceAndDurability",
+      "category": "PARAMETER",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "RatedCapacity",
+          "value": "75.0",
+          "valueType": "xs:double",
+          "modelType": "Property",
+          "description": [{ "language": "en", "text": "Rated capacity in kWh" }]
+        },
+        {
+          "idShort": "OriginalPower",
+          "value": "350",
+          "valueType": "xs:double",
+          "modelType": "Property",
+          "description": [{ "language": "en", "text": "Original power capability in kW" }]
+        },
+        {
+          "idShort": "InternalResistance",
+          "value": "0.05",
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "CapacityFadeRate",
+          "value": "0.02",
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ExpectedLifetime",
+          "value": "1500",
+          "valueType": "xs:integer",
+          "modelType": "Property",
+          "description": [{ "language": "en", "text": "Expected cycle life" }]
+        },
+        {
+          "idShort": "WarrantyPeriod",
+          "value": "8",
+          "valueType": "xs:integer",
+          "modelType": "Property",
+          "description": [{ "language": "en", "text": "Warranty in years" }]
+        }
+      ]
+    },
+    {
+      "idShort": "MaterialsAndComposition",
+      "category": "PARAMETER",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "Chemistry",
+          "value": "NMC 811",
+          "valueType": "xs:string",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "HazardousSubstances",
+          "value": "False",
+          "valueType": "xs:boolean",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "CriticalRawMaterials",
+          "modelType": "SubmodelElementCollection",
+          "value": [
+            { "idShort": "CobaltShare", "value": "10", "valueType": "xs:double", "modelType": "Property" },
+            { "idShort": "LithiumShare", "value": "5", "valueType": "xs:double", "modelType": "Property" },
+            { "idShort": "NickelShare", "value": "40", "valueType": "xs:double", "modelType": "Property" }
+          ]
+        }
+      ]
+    },
+    {
+      "idShort": "CarbonFootprint",
+      "category": "PARAMETER",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "TotalCarbonFootprint",
+          "value": "4500",
+          "valueType": "xs:double",
+          "modelType": "Property",
+          "description": [{ "language": "en", "text": "kg CO2 eq" }]
+        },
+        {
+          "idShort": "ShareMainProduction",
+          "value": "60",
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ShareTransport",
+          "value": "5",
+          "valueType": "xs:double",
+          "modelType": "Property"
+        }
+      ]
+    },
+    {
+      "idShort": "Circularity",
+      "category": "PARAMETER",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "RecycledContentCobalt",
+          "value": "15", "valueType": "xs:double", "modelType": "Property",
+          "description": [{ "language": "en", "text": "% Recycled" }]
+        },
+        {
+          "idShort": "RecycledContentLithium",
+          "value": "2",
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "ManualsForDismantling",
+          "value": "https://example.com/dismantle.pdf",
+          "valueType": "xs:string",
+          "modelType": "File"
+        }
+      ]
+    },
+    {
+      "idShort": "DynamicOperationData",
+      "category": "VARIABLE",
+      "modelType": "SubmodelElementCollection",
+      "value": [
+        {
+          "idShort": "StateOfHealth",
+          "value": "98.5",
+          "valueType": "xs:double",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "CycleCount",
+          "value": "120",
+          "valueType": "xs:integer",
+          "modelType": "Property"
+        },
+        {
+          "idShort": "Status",
+          "value": "In Use",
+          "valueType": "xs:string",
+          "modelType": "Property"
+        }
+      ]
+    }
+  ],
+  "modelType": "Submodel"
+}
